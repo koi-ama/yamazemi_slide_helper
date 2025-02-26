@@ -11,7 +11,7 @@ Canyonは、MDからスライドデッキを生成できるフレームワーク
 
 # Canyonの使い方
 ## Canyon紹介スライド
-slide.pdfはCanyonで作られた、Canyonの紹介資料です。特徴と使えるコンポーネント等を紹介しています。
+slide.pdfはCanyonで作られた、Canyonの紹介資料です。特徴と使えるコンポーネント等を紹介しています。なお、このスライドのソースコードはslide.mdにあります。
 
 ![](slides/1.PNG)
 ![](slides/2.PNG)
