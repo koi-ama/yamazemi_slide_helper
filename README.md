@@ -31,4 +31,4 @@ slide.pdfはCanyonで作られた、Canyonの紹介資料です。特徴と使�
 ![](slides/16.PNG)
 
 ## 使い方ガイド
-スライドテンプレートCanyonでかっこいいスライドを作ろう。(近日公開)で詳しい使い方を紹介しています。
+[CanyonとMarpでリッチなスライドを爆速で作ろう](https://www.jzurde.jp/posts/how_to_use_canyon/1)で詳しい使い方を紹介しています。
