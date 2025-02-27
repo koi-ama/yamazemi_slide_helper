@@ -2,7 +2,7 @@
 @import "default";
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 
-.area{
+.area {
   width: 100%;
   height: 100%;
   background-color: var(--accent);
@@ -11,21 +11,24 @@
 
 /* General Components */
 :root {
-  font-family: Bahnschrift, 'Meiryo UI', sans-serif;
+  font-family: Bahnschrift, 'DIN Alternate', 'Meiryo UI', sans-serif;
   --main: #2C55C9;
   --secondary: #3d3d3d;
   --accent: #ff0051;
 }
-*{
+
+* {
   box-sizing: border-box;
   margin: 0;
 }
+
 section {
   position: relative;
   background-color: #ffffff;
   font-size: 2rem;
   padding: 96px 32px 42px 32px;
 }
+
 h1:nth-of-type(1) {
   position: absolute;
   top: 8px;
@@ -40,6 +43,7 @@ h1:nth-of-type(1) {
   border-bottom: solid 1.5px var(--main);
   padding: 0 32px;
 }
+
 h1:nth-of-type(1)::before {
   content: '';
   width: 64px;
@@ -49,6 +53,7 @@ h1:nth-of-type(1)::before {
   left: 32px;
   background-color: var(--main);
 }
+
 h1:nth-of-type(1)::after {
   content: '';
   position: fixed;
@@ -57,6 +62,7 @@ h1:nth-of-type(1)::after {
   width: 100%;
   border-bottom: solid 1.5px var(--main);
 }
+
 section::before {
   font-size: 54px;
   content: attr(data-marpit-pagination);
@@ -72,6 +78,7 @@ section::before {
   color: var(--main);
   font-weight: bolder;
 }
+
 section::after {
   font-size: 18px;
   content: attr(data-marpit-pagination) " / " attr(data-marpit-pagination-total);
@@ -88,46 +95,61 @@ section::after {
   background-color: var(--main);
   color: white;
 }
-h2,h3,h4,h5,h6{
+
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
 }
-h2{  
+
+h2 {
   color: var(--main);
 }
-h3,h4,h5,h6{
+
+h3,
+h4,
+h5,
+h6 {
   color: var(--secondary);
 }
 
 /* twoColumns */
-section.twoColumns{
+section.twoColumns {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: stretch;
 }
-section.twoColumns>div{
+
+section.twoColumns>div {
   width: 50%;
   padding-top: 32px;
 }
-section.twoColumns>div:nth-of-type(1){
+
+section.twoColumns>div:nth-of-type(1) {
   border-right: solid 1.5px var(--main);
   padding-right: 32px;
 }
-section.twoColumns>div:nth-of-type(2){
+
+section.twoColumns>div:nth-of-type(2) {
   padding-left: 32px;
 }
-section.twoColumns>div>*+*{
+
+section.twoColumns>div>*+* {
   margin-top: 16px;
 }
 
 /* Title Page */
 section.title::before,
 section.title::after,
-section.subTitle::before{
+section.subTitle::before {
   display: none;
 }
+
 section.title,
-section.subTitle{
+section.subTitle {
   background-color: var(--main);
   color: #ffffff;
   display: flex;
@@ -135,8 +157,9 @@ section.subTitle{
   justify-content: center;
   padding: 0 !important;
 }
+
 section.title>h1,
-section.subTitle>h1{
+section.subTitle>h1 {
   font-size: 62px;
   color: white;
   padding: 32px 80px !important;
@@ -144,11 +167,13 @@ section.subTitle>h1{
   height: auto;
   border-bottom: solid 1.5px white;
 }
-section.title>h1::after{
+
+section.title>h1::after {
   display: none;
 }
+
 section.title>h1::before,
-section.subTitle>h1::before{  
+section.subTitle>h1::before {
   content: '';
   width: 64px;
   height: 8px;
@@ -157,41 +182,49 @@ section.subTitle>h1::before{
   left: 80px;
   background-color: white;
 }
+
 section.title>h1+*,
-section.subTitle>h1+*{
+section.subTitle>h1+* {
   margin-top: 32px;
 }
+
 section.title>*,
-section.subTitle>*{
+section.subTitle>* {
   padding-left: 192px;
 }
 
 /* Overriding Settings */
-section.grayPage>h1:nth-of-type(1), 
-section.grayPage::before{
+section.grayPage>h1:nth-of-type(1),
+section.grayPage::before {
   color: var(--secondary);
 }
+
 section.grayPage>h1:nth-of-type(1)::before,
-section.grayPage::after{
+section.grayPage::after {
   background-color: var(--secondary);
 }
+
 section.grayPage>h1:nth-of-type(1),
 section.grayPage>h1:nth-of-type(1)::after,
 section.grayPage>h1:nth-of-type(1)::before,
-section.grayPage.twoColumns>div:nth-of-type(1){
+section.grayPage.twoColumns>div:nth-of-type(1) {
   border-color: var(--secondary);
 }
-section.subTitle{
+
+section.subTitle {
   background-color: var(--secondary);
 }
+
 section.title>h2,
-section.subTitle>h2{
+section.subTitle>h2 {
   color: white;
 }
-section.subTitle::after{
+
+section.subTitle::after {
   background-color: white;
   color: var(--secondary);
 }
+
 section.subTitle>h1:nth-of-type(1)::after {
   content: '';
   position: fixed;
@@ -205,12 +238,14 @@ section.subTitle>h1:nth-of-type(1)::after {
 .katex {
   font: normal 1.05em KaTeX_Main, "Times New Roman", serif
 }
-.box{
+
+.box {
   padding: 16px 16px 16px 32px;
   position: relative;
   background-color: whitesmoke;
 }
-.box::before{
+
+.box::before {
   content: '';
   width: 8px;
   height: 100%;
@@ -218,118 +253,146 @@ section.subTitle>h1:nth-of-type(1)::after {
   top: 0;
   left: 0;
 }
-.box>h2:nth-of-type(1){
+
+.box>h2:nth-of-type(1) {
   color: inherit;
 }
-.blue{
+
+.blue {
   background-color: #d8dff4;
 }
-.blue::before{
+
+.blue::before {
   background-color: #2C55C9;
 }
-.blue>h2:nth-of-type(1){
+
+.blue>h2:nth-of-type(1) {
   color: #2C55C9;
   margin: 0;
   font-size: 0.8em;
 }
-.blue strong{
+
+.blue strong {
   color: #2C55C9;
   text-decoration: underline;
 }
-.green{
+
+.green {
   background-color: #dbecdc;
 }
-.green::before{
+
+.green::before {
   background-color: #01ad09;
 }
-.green>h2:nth-of-type(1){
+
+.green>h2:nth-of-type(1) {
   color: #01ad09;
   margin: 0;
   font-size: 0.8em;
 }
-.green strong{
+
+.green strong {
   color: #01ad09;
   text-decoration: underline;
 }
-.yellow{
+
+.yellow {
   background-color: #f5f0c6;
 }
-.yellow::before{
+
+.yellow::before {
   background-color: #b47800;
 }
-.yellow>h2:nth-of-type(1){
+
+.yellow>h2:nth-of-type(1) {
   color: #b47800;
   margin: 0;
   font-size: 0.8em;
 }
-.yellow strong{
+
+.yellow strong {
   color: #b47800;
   text-decoration: underline;
 }
-.red{
+
+.red {
   background-color: #f0dce3;
 }
-.red::before{
+
+.red::before {
   background-color: #ad0140;
 }
-.red>h2:nth-of-type(1){
+
+.red>h2:nth-of-type(1) {
   color: #ad0140;
   margin: 0;
   font-size: 0.8em;
 }
-.red strong{
+
+.red strong {
   color: #ad0140;
   text-decoration: underline;
 }
-.downarrow{
+
+.downarrow {
   width: 30px;
-  display: block ;
+  display: block;
   margin-left: 50px;
   background: var(--main);
   height: calc(tan(60deg) * 30px / 2);
   clip-path: polygon(50% 0, 100% 100%, 0 100%);
   transform: rotate(180deg);
 }
-.uparrow{
+
+.uparrow {
   width: 30px;
-  display: block ;
+  display: block;
   margin-left: 50px;
   background: var(--main);
   height: calc(tan(60deg) * 30px / 2);
   clip-path: polygon(50% 0, 100% 100%, 0 100%);
 }
-.tag{
+
+.tag {
   display: inline-block;
   color: white;
   padding: 16px 32px;
   font-size: 32px;
   font-weight: bolder;
 }
-.main{
+
+.main {
   background-color: var(--main);
 }
-.accent{
+
+.accent {
   background-color: var(--accent);
 }
+
 code {
   background-color: rgba(114, 114, 114, 0.2);
 }
+
 mark {
   padding: 8px;
   background-color: var(--accent);
   color: white;
 }
-ul{
+
+ul {
   padding: 0 32px;
 }
-img[alt~="border"]{
+
+img[alt~="border"] {
   border: solid 1px black;
 }
+
 img[alt~="center"] {
   display: block;
   margin: 0 auto;
 }
-pre{
+
+pre {
   font-family: "Source Code Pro", monospace;
   font-optical-sizing: auto;
   font-style: normal;
@@ -337,4 +400,3 @@ pre{
   background-color: #3d3d3d;
   color: white;
 }
-
