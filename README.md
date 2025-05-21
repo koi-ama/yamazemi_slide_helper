@@ -1,3 +1,6 @@
+# このリポジトリはJzurde/canyonのフォークです。
+
+
 ![](assets/logo.png)
 # Canyon(キャニオン)
 ## Canyonとは
