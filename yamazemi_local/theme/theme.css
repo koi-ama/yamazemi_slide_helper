@@ -1,0 +1,621 @@
+/* @theme yamazemi-celeste */
+@import "default";
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+/* Custom font size from frontmatter */
+:root {
+  --base-font-size: 24px;
+}
+
+.area {
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent);
+}
+
+
+/* General Components */
+:root {
+  font-family: Bahnschrift, 'DIN Alternate', 'Meiryo UI', sans-serif;
+  --main: #90CEB7;
+  --secondary: #3d3d3d;
+  --accent: #EC672F;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+section {
+  position: relative;
+  background-color: #ffffff;
+  font-size: var(--base-font-size);
+  padding: 96px 32px 42px 32px;
+}
+
+/* Font size variants for slides */
+section.text-xs {
+  font-size: 18px;
+}
+
+section.text-sm {
+  font-size: 21px;
+}
+
+section.text-md {
+  font-size: 24px; /* Default size */
+}
+
+section.text-lg {
+  font-size: 28px;
+}
+
+section.text-xl {
+  font-size: 32px;
+}
+
+/* Utility classes for inline text size changes */
+.text-xs {
+  font-size: 18px;
+}
+
+.text-sm {
+  font-size: 21px;
+}
+
+.text-md {
+  font-size: 24px; /* Default size */
+}
+
+.text-lg {
+  font-size: 28px;
+}
+
+.text-xl {
+  font-size: 32px;
+}
+
+h1:nth-of-type(1) {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  width: 100%;
+  height: 88px;
+  font-size: 52px;
+  color: var(--main);
+  font-weight: bolder;
+  display: flex;
+  align-items: center;
+  border-bottom: solid 1.5px var(--main);
+  padding: 0 32px;
+}
+
+h1:nth-of-type(1)::before {
+  content: '';
+  width: 64px;
+  height: 8px;
+  position: absolute;
+  bottom: 0;
+  left: 32px;
+  background-color: var(--main);
+}
+
+h1:nth-of-type(1)::after {
+  content: '';
+  position: fixed;
+  bottom: 42px;
+  left: 0;
+  width: 100%;
+  border-bottom: solid 1.5px var(--main);
+}
+
+section::before {
+  font-size: 54px;
+  content: attr(data-marpit-pagination);
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 8px;
+  right: 24px;
+  width: 50px;
+  height: 92px;
+  z-index: 50;
+  color: var(--main);
+  font-weight: bolder;
+}
+
+section::after {
+  font-size: 18px;
+  content: attr(data-marpit-pagination) " / " attr(data-marpit-pagination-total);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 42px;
+  padding: 0 24px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 22px;
+  font-weight: bolder;
+  background-color: var(--main);
+  color: white;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+h2 {
+  color: var(--main);
+}
+
+h3,
+h4,
+h5,
+h6 {
+  color: var(--secondary);
+}
+
+/* twoColumns */
+section.twoColumns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+section.twoColumns>div {
+  width: 50%;
+  padding-top: 32px;
+}
+
+section.twoColumns>div:nth-of-type(1) {
+  border-right: solid 1.5px var(--main);
+  padding-right: 32px;
+}
+
+section.twoColumns>div:nth-of-type(2) {
+  padding-left: 32px;
+}
+
+section.twoColumns>div>*+* {
+  margin-top: 16px;
+}
+
+/* Title Page */
+section.title::before,
+section.title::after,
+section.subTitle::before {
+  display: none;
+}
+
+section.title {
+  background-color: var(--main);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 !important;
+}
+
+section.subTitle {
+  background-color: var(--secondary);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0 !important;
+}
+
+section.title>h1,
+section.title>h2,
+section.subTitle>h1,
+section.subTitle>h2 {
+  color: white;
+  padding: 32px 80px !important;
+  position: relative;
+  height: auto;
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+}
+
+section.title>h1,
+section.subTitle>h1 {
+  font-size: 62px;
+  border-bottom: solid 1.5px white;
+}
+
+section.title>h2,
+section.subTitle>h2 {
+  font-size: 32px;
+  margin-top: 12px;
+}
+
+section.title code,
+section.subTitle code {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-family: "Source Code Pro", monospace;
+  font-size: 0.9em;
+}
+
+/* Add logo to title page */
+section.title>h1::after {
+  content: '';
+  display: inline-block;
+  width: 180px;
+  height: 770px;
+  margin-left: 1050px;
+  background-image: url('elements/yamazemi_logo_white_transparentBG.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  vertical-align: middle;
+}
+
+section.title>h1::before {
+  content: '';
+  width: 64px;
+  height: 8px;
+  position: absolute;
+  bottom: 0px;
+  left: 80px;
+  background-color: white;
+}
+
+section.title>h1+*,
+section.subTitle>h1+* {
+  margin-top: 32px;
+}
+
+section.title>*,
+section.subTitle>* {
+  padding-left: 192px;
+}
+
+/* Overriding Settings */
+section.grayPage>h1:nth-of-type(1),
+section.grayPage::before {
+  color: var(--secondary);
+}
+
+section.grayPage>h1:nth-of-type(1)::before,
+section.grayPage::after {
+  background-color: var(--secondary);
+}
+
+section.grayPage>h1:nth-of-type(1),
+section.grayPage>h1:nth-of-type(1)::after,
+section.grayPage>h1:nth-of-type(1)::before,
+section.grayPage.twoColumns>div:nth-of-type(1) {
+  border-color: var(--secondary);
+}
+
+section.subTitle {
+  background-color: var(--secondary);
+  padding-top: 32px !important;
+}
+
+section.subTitle>h1 {
+  margin-bottom: 3px;
+}
+
+section.subTitle>h2 {
+  color: white;
+  margin-top: 20px;
+  padding-left: 40px;
+}
+
+section.subTitle::after {
+  background-color: white;
+  color: var(--secondary);
+}
+
+section.subTitle>h1:nth-of-type(1)::after {
+  content: '';
+  position: fixed;
+  bottom: 42px;
+  left: 0;
+  width: 100%;
+  border-bottom: solid 1.5px white;
+}
+
+/* Subtitle page with two columns list */
+section.subTitle ul,
+section.subTitle ol {
+  columns: 1;
+  column-gap: 48px;
+  padding: 0 120px;
+  margin-top: 32px;
+}
+
+/* Only use two columns when there are more than 6 items */
+section.subTitle ul:has(li:nth-child(7)),
+section.subTitle ol:has(li:nth-child(7)) {
+  columns: 2;
+}
+
+section.subTitle ul li,
+section.subTitle ol li {
+  break-inside: avoid;
+  margin-bottom: 16px;
+}
+
+/* Specific Components */
+.katex {
+  font: normal 1.05em KaTeX_Main, "Times New Roman", serif
+}
+
+.box {
+  padding: 16px 16px 16px 32px;
+  position: relative;
+  background-color: whitesmoke;
+}
+
+.box::before {
+  content: '';
+  width: 8px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.box>h2:nth-of-type(1) {
+  color: inherit;
+}
+
+.blue {
+  background-color: #d8dff4;
+}
+
+.blue::before {
+  background-color: #2C55C9;
+}
+
+.blue>h2:nth-of-type(1) {
+  color: #2C55C9;
+  margin: 0;
+  font-size: 0.8em;
+}
+
+.blue strong {
+  color: #2C55C9;
+  text-decoration: underline;
+}
+
+.green {
+  background-color: #dbecdc;
+}
+
+.green::before {
+  background-color: #01ad09;
+}
+
+.green>h2:nth-of-type(1) {
+  color: #01ad09;
+  margin: 0;
+  font-size: 0.8em;
+}
+
+.green strong {
+  color: #01ad09;
+  text-decoration: underline;
+}
+
+.yellow {
+  background-color: #f5f0c6;
+}
+
+.yellow::before {
+  background-color: #b47800;
+}
+
+.yellow>h2:nth-of-type(1) {
+  color: #b47800;
+  margin: 0;
+  font-size: 0.8em;
+}
+
+.yellow strong {
+  color: #b47800;
+  text-decoration: underline;
+}
+
+.red {
+  background-color: #f0dce3;
+}
+
+.red::before {
+  background-color: #ad0140;
+}
+
+.red>h2:nth-of-type(1) {
+  color: #ad0140;
+  margin: 0;
+  font-size: 0.8em;
+}
+
+.red strong {
+  color: #ad0140;
+  text-decoration: underline;
+}
+
+.downarrow {
+  width: 30px;
+  display: block;
+  margin-left: 50px;
+  background: var(--main);
+  height: calc(tan(60deg) * 30px / 2);
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  transform: rotate(180deg);
+}
+
+.uparrow {
+  width: 30px;
+  display: block;
+  margin-left: 50px;
+  background: var(--main);
+  height: calc(tan(60deg) * 30px / 2);
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+
+.tag {
+  display: inline-block;
+  color: white;
+  padding: 16px 32px;
+  font-size: 32px;
+  font-weight: bolder;
+}
+
+.main {
+  background-color: var(--main);
+}
+
+.accent {
+  background-color: var(--accent);
+}
+
+code {
+  background-color: rgba(114, 114, 114, 0.2);
+}
+
+mark {
+  padding: 8px;
+  background-color: var(--accent);
+  color: white;
+}
+
+ul {
+  padding: 0 32px;
+}
+
+img[alt~="border"] {
+  border: solid 1px black;
+}
+
+img[alt~="center"] {
+  display: block;
+  margin: 0 auto;
+}
+
+pre {
+  font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 0.9em;
+  background-color: #3d3d3d;
+  color: white;
+}
+
+/* Markdownから生成されるコードブロック内のcode要素をターゲット */
+section pre > code,
+section pre[class*="language-"] > code {
+  font-size: 1em !important; /* 親のpre要素のサイズを継承し、!importantで強制 */
+}
+
+section.final {
+  background-color: var(--main) !important;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 0vh;
+  padding: 0 !important;
+}
+
+section.final .final-logo {
+  width: 300px;
+  height: 140px;
+  background: url('elements/yamazemi_logo_white_transparentBG.png') no-repeat center/contain;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+section.final h1:nth-of-type(1) {
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  left: unset !important;
+  top: unset !important;
+  border-bottom: none !important;
+  padding: 0 !important;
+  margin-top: 40px !important;
+  margin-bottom: 0 !important;
+  display: block !important;
+  text-align: center !important;
+  color: #fff !important;
+  font-size: 2.4em !important;
+}
+
+blockquote {
+  font-size: 18px;
+}
+
+/* Mermaid chart centering */
+.mermaid {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Table of Contents */
+section.toc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  padding-left: 80px;
+}
+
+section.toc h1 {
+  font-size: 62px;
+  color: var(--main);
+  margin-bottom: 48px;
+}
+
+/* Default size for TOC items */
+section.toc ol {
+  font-size: 32px;
+  list-style-position: inside;
+  padding: 0;
+  margin: 0;
+}
+
+section.toc ol li {
+  margin: 16px 0;
+}
+
+/* Larger size when there are 5 or fewer items */
+section.toc ol:not(:has(li:nth-child(6))) {
+  font-size: 38px;
+}
+
+section.toc ol:not(:has(li:nth-child(6))) li {
+  margin: 24px 0;
+}
+
+section.toc .toc-active {
+  background: var(--accent);
+  color: #fff;
+  border-radius: 8px;
+  padding: 0 12px;
+  font-weight: bold;
+  transition: background 0.2s;
+}
